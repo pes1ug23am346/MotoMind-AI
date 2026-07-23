@@ -1,3 +1,4 @@
+import 'package:motomind_ai/features/dashboard/screens/dashboard_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:motomind_ai/core/widgets/custom_text_field.dart';
 import 'package:motomind_ai/core/widgets/primary_button.dart';
@@ -85,7 +86,16 @@ class LoginScreen extends StatelessWidget {
                   PrimaryButton(
                     text: "Login",
                     onPressed: () {
-                      // Dashboard navigation will come later
+                      print("Before Navigation");
+
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const DashboardScreen(),
+                        ),
+                      );
+
+                      print("After Navigation");
                     },
                   ),
 
