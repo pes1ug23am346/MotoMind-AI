@@ -1,3 +1,4 @@
+import 'register_screen.dart';
 import 'package:flutter/material.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -85,7 +86,15 @@ class LoginScreen extends StatelessWidget {
                   Align(
                     alignment: Alignment.centerRight,
                     child: TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder: (_) => const RegisterScreen(),
+                          ),
+                        );
+
+                      },
                       child: const Text(
                         "Forgot Password?",
                         style: TextStyle(color: Color(0xFF2563EB)),
@@ -161,7 +170,14 @@ class LoginScreen extends StatelessWidget {
                         style: TextStyle(color: Colors.white70),
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const RegisterScreen(),
+                          ),
+                        );
+                        },
                         child: const Text(
                           "Create Account",
                           style: TextStyle(
