@@ -1,5 +1,8 @@
-import 'register_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:motomind_ai/core/widgets/custom_text_field.dart';
+import 'package:motomind_ai/core/widgets/primary_button.dart';
+
+import 'register_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -47,38 +50,17 @@ class LoginScreen extends StatelessWidget {
 
                   const SizedBox(height: 40),
 
-                  TextField(
-                    style: const TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      hintText: "Email",
-                      hintStyle: const TextStyle(color: Colors.white54),
-                      prefixIcon: const Icon(Icons.email, color: Colors.white70),
-                      filled: true,
-                      fillColor: const Color(0xFF1E293B),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(14),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
+                  const CustomTextField(
+                    hint: "Email",
+                    icon: Icons.email,
                   ),
 
                   const SizedBox(height: 20),
 
-                  TextField(
+                  const CustomTextField(
+                    hint: "Password",
+                    icon: Icons.lock,
                     obscureText: true,
-                    style: const TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      hintText: "Password",
-                      hintStyle: const TextStyle(color: Colors.white54),
-                      prefixIcon: const Icon(Icons.lock, color: Colors.white70),
-                      suffixIcon: const Icon(Icons.visibility_off, color: Colors.white70),
-                      filled: true,
-                      fillColor: const Color(0xFF1E293B),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(14),
-                        borderSide: BorderSide.none,
-                      ),
-                    ),
                   ),
 
                   const SizedBox(height: 12),
@@ -87,48 +69,33 @@ class LoginScreen extends StatelessWidget {
                     alignment: Alignment.centerRight,
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                        builder: (_) => const RegisterScreen(),
-                          ),
-                        );
-
+                        // Forgot Password screen will be added later
                       },
                       child: const Text(
                         "Forgot Password?",
-                        style: TextStyle(color: Color(0xFF2563EB)),
+                        style: TextStyle(
+                          color: Color(0xFF2563EB),
+                        ),
                       ),
                     ),
                   ),
 
                   const SizedBox(height: 10),
 
-                  SizedBox(
-                    height: 55,
-                    child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: const Color(0xFF2563EB),
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(14),
-                        ),
-                      ),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(
-                          fontSize: 18,
-                          color: Colors.white,
-                        ),
-                      ),
-                    ),
+                  PrimaryButton(
+                    text: "Login",
+                    onPressed: () {
+                      // Dashboard navigation will come later
+                    },
                   ),
 
                   const SizedBox(height: 25),
 
                   Row(
                     children: const [
-                      Expanded(child: Divider(color: Colors.white24)),
+                      Expanded(
+                        child: Divider(color: Colors.white24),
+                      ),
                       Padding(
                         padding: EdgeInsets.symmetric(horizontal: 10),
                         child: Text(
@@ -136,7 +103,9 @@ class LoginScreen extends StatelessWidget {
                           style: TextStyle(color: Colors.white54),
                         ),
                       ),
-                      Expanded(child: Divider(color: Colors.white24)),
+                      Expanded(
+                        child: Divider(color: Colors.white24),
+                      ),
                     ],
                   ),
 
@@ -146,7 +115,10 @@ class LoginScreen extends StatelessWidget {
                     height: 55,
                     child: OutlinedButton.icon(
                       onPressed: () {},
-                      icon: const Icon(Icons.g_mobiledata, size: 30),
+                      icon: const Icon(
+                        Icons.g_mobiledata,
+                        size: 30,
+                      ),
                       label: const Text(
                         "Continue with Google",
                         style: TextStyle(color: Colors.white),
@@ -172,11 +144,12 @@ class LoginScreen extends StatelessWidget {
                       TextButton(
                         onPressed: () {
                           Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => const RegisterScreen(),
-                          ),
-                        );
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  const RegisterScreen(),
+                            ),
+                          );
                         },
                         child: const Text(
                           "Create Account",
@@ -185,7 +158,7 @@ class LoginScreen extends StatelessWidget {
                             fontWeight: FontWeight.bold,
                           ),
                         ),
-                      )
+                      ),
                     ],
                   ),
                 ],
